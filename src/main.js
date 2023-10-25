@@ -30,7 +30,7 @@ function toggleSignIn() {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = await result.user.getIdToken();
         // The signed-in user info.
-        document.getElementById("quickstart-oauthtoken")!.textContent = token;
+        document.getElementById("quickstart-oauthtoken").textContent = token;
       })
       .catch(function (error) {
         // Handle Errors here.
@@ -53,8 +53,8 @@ function toggleSignIn() {
   } else {
     auth.signOut();
   }
-  //@ts-ignore
-  document.getElementById("quickstart-sign-in")!.disabled = true;
+
+  document.getElementById("quickstart-sign-in").disabled = true;
 }
 
 /**
@@ -74,27 +74,27 @@ function initApp() {
       // var isAnonymous = user.isAnonymous;
       // var uid = user.uid;
       // var providerData = user.providerData;
-      document.getElementById("quickstart-sign-in-status")!.textContent =
+      document.getElementById("quickstart-sign-in-status").textContent =
         "Signed in";
-      document.getElementById("quickstart-sign-in")!.textContent = "Sign out";
-      document.getElementById("quickstart-account-details")!.textContent =
+      document.getElementById("quickstart-sign-in").textContent = "Sign out";
+      document.getElementById("quickstart-account-details").textContent =
         JSON.stringify(user, null, "  ");
     } else {
       // User is signed out.
-      document.getElementById("quickstart-sign-in-status")!.textContent =
+      document.getElementById("quickstart-sign-in-status").textContent =
         "Signed out";
-      document.getElementById("quickstart-sign-in")!.textContent =
+      document.getElementById("quickstart-sign-in").textContent =
         "Sign in with Google";
-      document.getElementById("quickstart-account-details")!.textContent =
+      document.getElementById("quickstart-account-details").textContent =
         "null";
-      document.getElementById("quickstart-oauthtoken")!.textContent = "null";
+      document.getElementById("quickstart-oauthtoken").textContent = "null";
     }
-    //@ts-ignore
-    document.getElementById("quickstart-sign-in")!.disabled = false;
+
+    document.getElementById("quickstart-sign-in").disabled = false;
   });
 
   document
-    .getElementById("quickstart-sign-in")!
+    .getElementById("quickstart-sign-in")
     .addEventListener("click", toggleSignIn, false);
 }
 
